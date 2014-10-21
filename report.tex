@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage{amssymb,amsmath,latexsym, braket}
 \usepackage{tikz, pgfplots, graphicx}
 
@@ -10,7 +10,21 @@
 \maketitle
 
 \begin{abstract}
-The abstract text goes here.
+Synchronization is a common phenomenon occurring with coupled oscillators, where over time their phases become locked. It is observed in a wide range of situations, from the tidal locking of the moon to neural clusters. This report gives an overview of this phenomenon, with specific focus on the Kuramoto model.
 \end{abstract}
+\tableofcontents
+\section{Introduction}
+
+In 1665, Christian Huygens made the first recorded observation and analysis of synchronization\cite{bennett2002huygens}. He noticed that a pair of pendulums kept in the same housing would gradually start moving in unison regardless of their initial conditions. Additionally, if perturbed after the synchronization, the pendulums would re-synchronize. He attributed this effect to the motion of the beam connecting the two, but did not manage to make a complete model of this phenomenon.
+
+The field was quite dormant until the early 1900s, when J. Vincent\cite{vincent1919some}, Van Der Pol\cite{van1920theory}, and E. Appleton\cite{appleton1922automatic} experimented with electrical circuits involving triode oscillators.
+
+After this, there has been a myriad of topics in which synchronization has been studied, including in many electrical, chemical, and biological systems. Additionally, the phenomenon has many applications --- for example, pacemakers are a driving oscillator to the heart in a synchronized system.
+
+\section{Basics}
+\subsection{Oscillator coupling}
+Systems which individually behave as oscillators can be "coupled", such that at least one of them is exposed to an effect dependent on the phases of the two oscillators. Usually this effect is monotonic and dependent on the phase difference only. Coupling can be one way or two way ("mutual coupling"), where
+\bibliographystyle{abbrv}
+\bibliography{bib}
 
 \end{document}
