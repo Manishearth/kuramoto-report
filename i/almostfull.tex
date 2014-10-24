@@ -1,0 +1,27 @@
+\documentclass{standalone}
+\usepackage{amssymb,amsmath,latexsym, braket}
+\usepackage{tikz, pgfplots, graphicx}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[domain=0:180,legend pos=south east,
+    axis lines*=middle,
+    xlabel=$t$,
+    ylabel=$\theta_i$,
+    xtick={},
+    xticklabels={},
+    axis lines = middle,
+every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+every axis y label/.style={at={(current axis.north west)},above=2mm},
+     ]
+    \addplot[samples=500, mark=none] {sin(5*x)};
+    \addplot[samples=500, mark=none] {sin(5*x + 10)};
+    \addplot[samples=500, mark=none] {sin(5*x + 15)};
+    \addplot[samples=500, mark=none] {sin(5*x + 20)};
+    \addplot[samples=500, mark=none] {sin(5*x + 25)};
+    \addplot[samples=500, mark=none] {sin(5*x + 30)};
+    \addplot[samples=500, mark=none] {sin(5*x + 35)};
+    \addplot[samples=500, mark=none] {sin(5*x + 40)};
+    \addplot[samples=500, mark=none] {sin(5*x + 45)};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

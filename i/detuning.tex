@@ -1,0 +1,23 @@
+\documentclass{standalone}
+\usepackage{amssymb,amsmath,latexsym, braket}
+\usepackage{tikz, pgfplots, graphicx}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[domain=0:4,legend pos=south east,
+    axis lines*=middle,
+    xlabel=$\omega_{\rm driven}$,
+    ylabel=$\omega_{\rm driving} - \omega_{\rm driven}$,
+    xtick={2},
+    xticklabels={$\omega_{\rm driving}$},
+    ytick={0},
+    yticklabels={$0$}
+    axis lines = middle,
+%every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+%every axis y label/.style={at={(current axis.north west)},above=2mm},
+     ]
+    \addplot[samples=200, mark=none,domain=0.5:1, color=blue] {sqrt(1-x)};
+    \addplot[samples=200, mark=none,domain=3:3.5, color=blue] {-sqrt(x-3)};
+    \addplot[mark=none,domain=1:3, color=blue]{0};
+    \end{axis}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,21 @@
+\documentclass{standalone}
+\usepackage{amssymb,amsmath,latexsym, braket}
+\usepackage{tikz, pgfplots, graphicx}
+\begin{document}
+\begin{tikzpicture}
+    \begin{axis}[domain=0:4,legend pos=south east,
+    axis lines*=middle,
+    xlabel=$K$,
+    ylabel=Order parameter,
+	xtick={1},
+	xticklabel={$K_c$},
+    %axis lines = middle,
+%every axis x label/.style={at={(current axis.right of origin)},anchor=west},
+%every axis y label/.style={at={(current axis.north west)},above=2mm},
+     ]
+    \addplot[samples=200, mark=none,domain=0:1, color=blue] {0};
+    \addplot[samples=200, mark=none,domain=1:2, color=blue] {-(x-2)*(x-2)+1};
+    \addplot[samples=200, mark=none,domain=2:3, color=blue] {1};
+    \end{axis}
+\end{tikzpicture}
+\end{document}
