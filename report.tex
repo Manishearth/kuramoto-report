@@ -8,13 +8,13 @@
 \begin{document}
 
 \title{The Kuramoto Model}
-\author{Manish Goregaokar\\{\small Guide: Prof. Punit Parmananda} \\ {\small Roll number: 120260006}}
+\author{{\bf Supervised Learning Project}\\by\\ {\bf Manish Goregaokar}\\Department of Physics, IIT Bombay\\\quad\\under the guidance of\\{\bf Prof. Punit Parmananda}\\Department of Physics, IIT Bombay }
 
 \maketitle
+\begin{center}
+\includegraphics[scale=0.25]{i/iitb}
+\end{center}
 
-\begin{abstract}
-Synchronization is a common phenomenon occurring with coupled oscillators, where over time their phases become locked. It is observed in a wide range of situations, from the tidal locking of the moon to fireflies to neural clusters. This report gives an overview of this phenomenon, with specific focus on the Kuramoto model.
-\end{abstract}
 \pagebreak
 \stepcounter{section}
 \section*{Acceptance letter}
@@ -26,9 +26,7 @@ This supervised learning project report titled ``The Kuramoto Model" submitted b
 \pagebreak
 \stepcounter{section}
 \section*{Declaration}
- I, Manish Goregaokar, Roll No. 120260006 understand
-
-that plagiarism is defined as any one or the combination of the following:
+ I, Manish Goregaokar, Roll No. 120260006 understand that plagiarism is defined as any one or the combination of the following:
 \begin{enumerate}
 \item Uncredited verbatim copying of individual sentences, paragraphs or illustrations (such as graphs, diagrams, etc.) from any source, published or unpublished, including the internet.
 \item Uncredited improper paraphrasing of pages or paragraphs (changing a few words or phrases, or rearranging the original sentence order)
@@ -40,17 +38,23 @@ that plagiarism is defined as any one or the combination of the following:
 \\\quad
 \\Manish Goregaokar
 \\Roll No.: 120260006
-\\\today
+\\\today\\
+\quad\\
+{\tiny The above declaration was copied verbatim from http://www.che.iitb.ac.in/online/resources/academic-resources/technical-guides-and-tools/btech-project-btp/declaration-form}
 \pagebreak
 \stepcounter{section}
 \section*{Acknowledgements}
 I would like to express my sincere thanks to Professor Punit Paramananda for the opportunity to do this project and his continued guidance. I would also like to express my gratitude towards Tanu Singla, Dinesh Verma, Pawan Dahiya, Shreyans Jain, and Ankit Mahajan for fruitful discussions and inputs during my exploration of the topic.
 \pagebreak
-\addtocounter{section}{-3}
+\stepcounter{section}
+\section*{Abstract}
+Synchronization is a common phenomenon occurring with coupled oscillators, where over time their phases become locked. It is observed in a wide range of situations, from the tidal locking of the moon to fireflies to neural clusters. This report gives an overview of this phenomenon, with specific focus on the Kuramoto model.
+\pagebreak
+\addtocounter{section}{-4}
 \tableofcontents\newpage
 \section{Introduction}
 
-In 1665, Christian Huygens made the first recorded observation and analysis of synchronization\cite{bennett2002huygens}. He noticed that a pair of pendulums kept in the same housing would gradually start moving in unison regardless of their initial conditions. Additionally, if perturbed after the synchronization, the pendulums would re-synchronize. He attributed this effect to the motion of the beam connecting the two, but did not manage to make a complete model of this phenomenon.
+In 1665, Christiaan Huygens made the first recorded observation and analysis of synchronization\cite{bennett2002huygens}. He noticed that a pair of pendulums kept in the same housing would gradually start moving in unison regardless of their initial conditions. Additionally, if perturbed after the synchronization, the pendulums would re-synchronize. He attributed this effect to the motion of the beam connecting the two, but did not manage to make a complete model of this phenomenon.
 
 The field was quite dormant until the early 1900s, when J. Vincent\cite{vincent1919some}, Van Der Pol\cite{van1920theory}, and E. Appleton\cite{appleton1922automatic} experimented with electrical circuits involving triode oscillators.
 
@@ -58,7 +62,7 @@ After this, there has been a myriad of topics in which synchronization has been 
 
 \section{Basics}
 \subsection{Coupled oscillators}
-Systems which individually behave as oscillators can be "coupled", such that at least one of them is exposed to an effect dependent on the phases of the two oscillators. Usually this effect is monotonic and dependent on the phase difference only. Coupling can be one way or two way ("mutual coupling"). In the one-way case we have a "driving oscillator" which is unaffected by the other oscillator(s), and the other oscillator(s) are known as the "driven oscillator(s)".
+Systems which individually behave as oscillators can be ``coupled", such that at least one of them is exposed to an effect dependent on the phases of the two oscillators. Usually this effect is monotonic and dependent on the phase difference only. Coupling can be one way or two way ("mutual coupling"). In the one-way case we have a "driving oscillator" which is unaffected by the other oscillator(s), and the other oscillator(s) are known as the "driven oscillator(s)".
 
 For example, for a pair of oscillators, unidirectional coupling could have the equations:
 \begin{align*}
@@ -126,10 +130,10 @@ Even if the two frequencies are not close, we can still have some synchronizatio
 Typically, most synchronizing real systems can be modeled with an \emph{ensemble} of coupled oscillators. Coupling may or may not be global.
 
 
-In such an ensemble, synchronization can be "partial"; i.e. there are some elements of synchronization to be found, but it is still not fully synchronized. For example, in Figure \ref{fig:fullgraph}, we have the time series for a system of almost completely synchronized oscillators (Complete full synchronization would be where the time series for all oscillators are equal or opposite).
+In such an ensemble, synchronization can be ``partial"; i.e. there are some elements of synchronization to be found, but it is still not fully synchronized. For example, in Figure \ref{fig:fullgraph}, we have the time series for a system of almost completely synchronized oscillators\footnote{Complete full synchronization would be where the time series for all oscillators are equal or opposite}.
 
 Contrast this with Figure \ref{fig:nograph}, where there is no synchronization at all. While there are times in which the oscillators seem to come close to synchronization, these do not last. However, in Figure \ref{fig:partialgraph}, we have what is known as ``partial synchronization". The majority of the oscillators here are close to the ``mean" time
- series, though there may be a minority of oscillators which are out of phase. It is not necessary that the \emph{sames} oscillators will continue to stay somewhat in phase; usually the number of partially synchronized oscillators is approximately constant, however individual oscillators alternate between being in phase and out of phase with the rest.
+ series, though there may be a minority of oscillators which are out of phase. It is not necessary that the \emph{same} oscillators will continue to stay somewhat in phase; usually the number of partially synchronized oscillators is approximately constant, however individual oscillators alternate between being in phase and out of phase with the rest.
 
 
 
@@ -196,7 +200,7 @@ If we plot the variation of the order parameter with the coupling constant, we g
 
 \caption{Critical coupling}\label{fig:crit}
 \end{figure}
-Though not very clear in this plot, there is a "critical coupling strength" (slightly less than 0.02 in this case) $K_c$ beyond which any level of synchronization occurs. Below this, the oscillators act as if they are uncoupled. This can be seen in the theoretical Figure \ref{fig:crit}. The bifurcation observed is a supercritical Hopf bifurcation\cite{niu2014bifurcation}, with the oscillating partially synchronized state bifurcating from the incoherent state.
+Though not very clear in this plot, there is a ``critical coupling strength" (slightly less than 0.02 in this case) $K_c$ beyond which any level of synchronization occurs. Below this, the oscillators act as if they are uncoupled. This can be seen in the theoretical Figure \ref{fig:crit}. The bifurcation observed is a supercritical Hopf bifurcation\cite{niu2014bifurcation}, with the oscillating partially synchronized state bifurcating from the incoherent state.
 
 
 
@@ -231,6 +235,7 @@ In fact, using this model we can even predict the critical coupling $K_c$ with s
 
 \caption{The supercritical Hopf bifurcation of the order parameter}\label{fig:math:bifur}
 \end{figure}
+
 Now, we have $r = r_{\rm drift} + r_{\rm lock}$. For the locked oscillators, we have $|\omega|<Kr$, and $\omega=Kr\sin\theta$.
 
 \begin{align*}
